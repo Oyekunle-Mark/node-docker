@@ -48,6 +48,8 @@ server.get('*', (_, res) => res.status(404).send(notFound));
 
 connectDb()
   .then(() =>
-    server.listen(3000, () => console.log('Server listening on port 3000')),
+    server.listen(process.env.PORT, () =>
+      console.log(`Server listening on port ${process.env.PORT}`),
+    ),
   )
   .catch((err) => console.error('Failed to start the server: ', err));
