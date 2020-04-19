@@ -39,11 +39,9 @@ server.get('/players', async (_, res) => {
 });
 
 server.get('/seed_players', async (_, res) => {
-  const user = new User({ name: 'userTest' });
+  const createdUsers = await User.insertMany(users);
 
-  await user.save().then(() => console.log('User created'));
-
-  res.status(200).json('User created \n');
+  res.status(200).json(`Users created: ${createdUsers} \n`);
 });
 
 server.get('*', (_, res) => res.status(404).send(notFound));
