@@ -7,6 +7,9 @@
 # Start the node container and link to the mongodb container
 # docker run -p 80:3000 -d --link mongoContainer:mongodb node-docker
 
+# Create a custom bridge network
+# docker network create --driver bridge isolated_network
+
 FROM node:latest
 
 ENV PORT=3000
