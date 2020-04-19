@@ -1,6 +1,4 @@
 const express = require('express');
-const mongoose = require('mongoose');
-const languages = require('./data');
 
 const server = express();
 const message = `
@@ -32,21 +30,6 @@ const notFound = `
 `;
 
 server.get('/', (_, res) => res.status(200).send(message));
-server.get('/languages', async (_, res) => {
-  const langs = await languages.find({});
-
-  return res.status(200).json(langs);
-});
 server.get('*', (_, res) => res.status(404).send(notFound));
 
-mongoose
-  .connect('mongodb://localhost:27017/node_docker_db', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() =>
-    server.listen(process.env.PORT, () =>
-      console.log('Server listening on port 3000'),
-    ),
-  )
-  .catch((err) => console.log('Failed to start server with error: ', err));
+server.listen(3000, () => console.log('Server listening on port 3000'));
