@@ -1,4 +1,5 @@
 const express = require('express');
+const connectDb = require('./connect');
 
 const server = express();
 const message = `
@@ -32,4 +33,8 @@ const notFound = `
 server.get('/', (_, res) => res.status(200).send(message));
 server.get('*', (_, res) => res.status(404).send(notFound));
 
-server.listen(3000, () => console.log('Server listening on port 3000'));
+connectDb()
+  .then(() =>
+    server.listen(3000, () => console.log('Server listening on port 3000')),
+  )
+  .catch((err) => console.error('Failed to start the server: ', err));
