@@ -26,4 +26,4 @@ const users = [
   },
 ];
 
-module.exports = { Users, users };
+module.exports = { User, users };
