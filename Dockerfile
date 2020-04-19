@@ -13,7 +13,7 @@
 FROM node:latest
 
 ENV PORT=3000
-ENV MONGO_URL="mongodb://172.17.0.2:27017/node_docker_db"
+ENV MONGO_URL="mongodb://172.18.0.2:27017/node_docker_db"
 
 WORKDIR /usr/node-docker
 
