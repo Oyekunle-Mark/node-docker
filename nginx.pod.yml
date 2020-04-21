@@ -14,3 +14,4 @@ spec:
 
 # kubectl create -f nginx.pod.yml --save-config
 # kubectl describe [pod-name]
+# kubectl apply -f nginx.pod.yml
