@@ -19,6 +19,13 @@ spec:
         timeoutSeconds: 2 # default is 1
         periodSeconds: 5 # default is 10
         failureThreshold: 1 # default is 3
+      readinessProbe:
+        httpGet:
+          path: /index.html
+          port: 80
+        initialDelaySeconds: 3
+        periodSeconds: 5 # default is 10
+        failureThreshold: 1 # default is 3
 
 # kubectl create -f nginx.pod.yml --save-config
 # kubectl describe [pod-name]
