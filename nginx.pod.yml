@@ -15,3 +15,6 @@ spec:
 # kubectl create -f nginx.pod.yml --save-config
 # kubectl describe [pod-name]
 # kubectl apply -f nginx.pod.yml
+# kubectl exec [pod-name] -it sh
+# kubectl edit -f nginx.pod.yml
+# kubectl delete -f nginx.pod.yml
