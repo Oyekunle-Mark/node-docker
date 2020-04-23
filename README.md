@@ -2,6 +2,6 @@
 
 A small node app which demonstrates how to containerize a web app.
 
-## Authour
+## Author
 
 *Oyekunle Oloyede*
